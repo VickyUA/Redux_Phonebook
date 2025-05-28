@@ -1,6 +1,7 @@
 import css from "./Contact.module.css";
 import { FaUser } from "react-icons/fa";
 import { BiSolidPhone } from "react-icons/bi";
+import { MdDeleteForever } from "react-icons/md";
 
 export default function Contact({ name, number, id, onDelete }) {
   return (
@@ -16,7 +17,7 @@ export default function Contact({ name, number, id, onDelete }) {
         </p>
       </div>
       <button type="button" className={css.btn} onClick={() => onDelete(id)}>
-        Delete
+        <MdDeleteForever size="22" color="rgb(9, 90, 33)" />
       </button>
     </div>
   );

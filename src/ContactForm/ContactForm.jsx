@@ -34,34 +34,40 @@ export default function ContactForm({ add }) {
       validationSchema={FeedbackSchema}
     >
       <Form className={css.form}>
-        <div>
-          <label htmlFor="name">
-            <FaUser size="14" color="rgb(9, 90, 33)" padding="10px" />
-            Name
-          </label>
-          <Field
-            type="text"
-            name="name"
-            id="name"
-            className={css.field}
-            autoComplete="off"
-          />
-          <ErrorMessage name="name" component="span" className={css.error} />
-        </div>
-        <div>
-          <label htmlFor="number">
-            <BiSolidPhone size="18" color="rgb(9, 90, 33)" />
-            Phone
-          </label>
-          <Field
-            type="text"
-            name="number"
-            id="number"
-            className={css.field}
-            autoComplete="off"
-          />
-          <ErrorMessage name="number" component="span" className={css.error} />
-        </div>
+        <ul className={css.list}>
+          <li>
+            <label htmlFor="name">
+              <FaUser size="14" color="rgb(9, 90, 33)" padding="10px" />
+              Name
+            </label>
+            <Field
+              type="text"
+              name="name"
+              id="name"
+              className={css.field}
+              autoComplete="off"
+            />
+            <ErrorMessage name="name" component="span" className={css.error} />
+          </li>
+          <li>
+            <label htmlFor="number">
+              <BiSolidPhone size="18" color="rgb(9, 90, 33)" />
+              Phone
+            </label>
+            <Field
+              type="text"
+              name="number"
+              id="number"
+              className={css.field}
+              autoComplete="off"
+            />
+            <ErrorMessage
+              name="number"
+              component="span"
+              className={css.error}
+            />
+          </li>
+        </ul>
         <button type="submit" className={css.btn}>
           Add contact
         </button>

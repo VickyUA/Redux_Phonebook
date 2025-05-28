@@ -2,16 +2,22 @@
   border: 1px solid black;
   border-radius: 5px;
   width: 250px;
-  padding: 5px;
-  background-color: rgb(255, 229, 200);
+  padding: 10px;
+  background-color: rgb(255, 236, 215);
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .btn {
-  background-color: rgb(255, 229, 200);
+  background-color: rgb(255, 236, 215);
   border-radius: 3px;
   border: none;
   width: 100px;
@@ -27,9 +33,9 @@
   outline: none;
   border: none;
   border-bottom: 1px solid black;
-  width: 230px;
+  width: 220px;
   padding: 5px;
-  background-color: rgb(255, 229, 200);
+  background-color: rgb(255, 236, 215);
 }
 
 .error {
