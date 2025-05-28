@@ -4,6 +4,9 @@ import { BiSolidPhone } from "react-icons/bi";
 import css from "./ContactForm.module.css";
 import * as Yup from "yup";
 import { ErrorMessage } from "formik";
+import { useDispatch } from "react-redux";
+import { addContact } from "../redux/contactsSlice";
+import { nanoid } from "nanoid";
 
 const initialValues = {
   name: "",
@@ -21,9 +24,11 @@ const FeedbackSchema = Yup.object().shape({
     .required("Required"),
 });
 
-export default function ContactForm({ add }) {
+export default function ContactForm() {
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, actions) => {
-    add(values);
+    dispatch(addContact({ ...values, id: nanoid() }));
     actions.resetForm();
   };
 

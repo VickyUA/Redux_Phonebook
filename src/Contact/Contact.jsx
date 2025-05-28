@@ -1,9 +1,13 @@
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../redux/contactsSlice";
 import css from "./Contact.module.css";
 import { FaUser } from "react-icons/fa";
 import { BiSolidPhone } from "react-icons/bi";
 import { MdDeleteForever } from "react-icons/md";
 
-export default function Contact({ name, number, id, onDelete }) {
+export default function Contact({ name, number, id }) {
+  const dispatch = useDispatch();
+
   return (
     <div className={css.cardWrapper}>
       <div>
@@ -16,7 +20,11 @@ export default function Contact({ name, number, id, onDelete }) {
           {number}
         </p>
       </div>
-      <button type="button" className={css.btn} onClick={() => onDelete(id)}>
+      <button
+        type="button"
+        className={css.btn}
+        onClick={() => dispatch(deleteContact(id))}
+      >
         <MdDeleteForever size="22" color="rgb(9, 90, 33)" />
       </button>
     </div>
